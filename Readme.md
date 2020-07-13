@@ -1,4 +1,4 @@
-[![GPLv3 Licensed](https://img.shields.io/badge/license-GPLv3-blue.svg)](https://www.gnu.org/copyleft/gpl.html)
+[![GPLv3 Licensed](https://img.shields.io/badge/license-GPLv3-blue.svg)](https://www.gnu.org/copyleft/gpl.html)[![Build Status](https://travis-ci.com/exc-asia-and-europe/iipsrv.svg?branch=master)](https://travis-ci.com/exc-asia-and-europe/iipsrv)
 
 # About
 This repository contains the docker container of our IIIF server user by the Early Chinese Periodicals Online [ECPO](https://uni-heidelberg.de/ecpo/).
