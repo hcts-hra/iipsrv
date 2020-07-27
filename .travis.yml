@@ -1,16 +1,22 @@
 os: linux
-dist: bionic
+dist: focal
 language: shell
+
+addons:
+  apt:
+    packages:
+      - bats
 
 services:
   - docker
 
 before_install:
   - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_USERNAME" --password-stdin
+  - docker build -t hra1/iipsrv:latest .
 
 # TODO add actual test execution
 script:
-  - docker build -t hra1/iipsrv:latest .
+  - bats test/*.bats
 
 after_success:
   - docker push hra1/iipsrv:latest
