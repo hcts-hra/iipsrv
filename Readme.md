@@ -42,4 +42,4 @@ We recommend separating the data and server application by mapping a docker volu
      ```
 
 ## Build Arguments and Configuration Option
-We are currently using the default iipsrv configuration setting, the matching configuration file is located in `src/conf/`.
+We are currently using the default iipsrv configuration setting, the matching configuration file is located in `src/lighttpd/lighttpd.conf`.
