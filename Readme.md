@@ -1,4 +1,4 @@
-[![GPLv3 Licensed](https://img.shields.io/badge/license-GPLv3-blue.svg)](https://www.gnu.org/copyleft/gpl.html)[![Build Status](https://travis-ci.com/exc-asia-and-europe/iipsrv.svg?branch=master)](https://travis-ci.com/exc-asia-and-europe/iipsrv)
+[![GPLv3 Licensed](https://img.shields.io/badge/license-GPLv3-blue.svg)](https://www.gnu.org/copyleft/gpl.html) [![Build Status](https://travis-ci.com/exc-asia-and-europe/iipsrv.svg?branch=master)](https://travis-ci.com/exc-asia-and-europe/iipsrv)
 
 # About
 This repository contains the docker container of our IIIF server user by the Early Chinese Periodicals Online [ECPO](https://uni-heidelberg.de/ecpo/).
@@ -23,11 +23,15 @@ You should be able to visit the working IIIF server at `localhost:8000`
 
 ### Test
 
-`php` test files are part of these images, you can visit: `localhost:8000/` to see the working test.
+a simple `php` test files and accompanying test image are part of these docker images, you can visit: `localhost:8000/` to see the working server and [this page](http://localhost:8000/cgi-bin/fcgi-bin/iipsrv.fcgi?IIIF=imageStorage%2Fecpo_new%2Fimage2.tif%2Ffull%2F!648,390/0/default.jpg) for a sample image.
+
+to execute the test suite (written in [bats](https://github.com/bats-core/bats-core)) simple call:
 
 ```bash
-TODO
+bats *.bats
 ```
+
+Gotcha: To run the tests the test images must not be present on the filesystem, e.g. from a manual run of a test. Some IDEs hide ignored files by default.
 
 ### Using a Persistent Volume
 We recommend separating the data and server application by mapping a docker volume.
@@ -38,4 +42,4 @@ We recommend separating the data and server application by mapping a docker volu
      ```
 
 ## Build Arguments and Configuration Option
-TODO
+We are currently using the default iipsrv configuration setting, the matching configuration file is located in `src/conf/`.
