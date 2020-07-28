@@ -10,16 +10,17 @@ addons:
 services:
   - docker
 
-before_install:
-  - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_USERNAME" --password-stdin
+install:
   - docker build -t hra1/iipsrv:latest .
 
-install:
+before_script:
   - docker run  -dit -p 8000:80 hra1/iipsrv:latest
 
-# TODO add actual test execution
 script:
   - bats test/*.bats
 
-after_success:
-  - docker push hra1/iipsrv:latest
+deploy:
+  provider: script
+  script: bash docker_push
+  on:
+    branch: master
