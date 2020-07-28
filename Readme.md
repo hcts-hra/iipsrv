@@ -28,10 +28,10 @@ a simple `php` test files and accompanying test image are part of these docker i
 to execute the test suite (written in [bats](https://github.com/bats-core/bats-core)) simple call:
 
 ```bash
-bats *.bats
+bats test/*.bats
 ```
 
-Gotcha: To run the tests the test images must not be present on the filesystem, e.g. from a manual run of a test. Some IDEs hide ignored files by default.
+Gotcha: To run the tests the `default.jpg` test images retrieved as part of a normal test run must not be present on the filesystem, e.g. from a previous manual run of the test. Some IDEs hide ignored files by default.
 
 ### Using a Persistent Volume
 We recommend separating the data and server application by mapping a docker volume.
