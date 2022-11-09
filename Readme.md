@@ -14,7 +14,7 @@ docker run  -p 8000:80 hra1/iipsrv:latest
 
 Alternatively, build the image from source:
 ```bash
-cd exc-asia-and-europe/iipsrv
+cd hcts-hra/iipsrv
 docker build .
 docker run  -p 8000:80 <ID-REPORTED-BY-BUILD>
 ```
