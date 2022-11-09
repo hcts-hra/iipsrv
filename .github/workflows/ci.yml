@@ -34,7 +34,7 @@ jobs:
         run: bats --tap test/*.bats
       - name: Build and publish :latest to Dockerhub
       # only publish from main
-        if: github.ref == 'refs/heads/main'
+        if: github.ref == 'refs/heads/master'
         uses: docker/build-push-action@v3
         with:
           context: ./
